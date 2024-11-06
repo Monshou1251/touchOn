@@ -1,45 +1,55 @@
-# touchon
+# TouchOn Project
 
-This template should help get you started developing with Vue 3 in Vite.
+## Описание проекта
+TouchOn — это приложение для управления контактами, реализованное на **Vue 3** с использованием **TypeScript**. Приложение позволяет пользователю добавлять, редактировать и удалять контакты, сохраняя данные в **LocalStorage** для постоянного хранения.
 
-## Recommended IDE Setup
+## Инструкция по запуску
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+1. **Клонируйте репозиторий**:
+   ```bash
+   git clone https://github.com/Monshou1251/touchOn.git
+   cd touchOn
+   ```
 
-## Type Support for `.vue` Imports in TS
+2. **Установите зависимости**:
+   ```bash
+   npm install
+   ```
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+3. **Запустите локальный сервер разработки**:
+   ```bash
+   npm run dev
+   ```
 
-## Customize configuration
+4. **Откройте браузер** и перейдите по адресу `http://localhost:3000` для просмотра приложения.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Скрипты
 
-## Project Setup
+- `npm run dev` — запускает проект в режиме разработки.
+- `npm run build` — собирает проект для продакшн-среды.
+- `npm run test` — запускает тесты с использованием **Vitest**.
 
-```sh
-npm install
-```
+## Технологии и подходы
 
-### Compile and Hot-Reload for Development
+- **Vue 3 и Composition API**: Основной фреймворк для реализации фронтенда. Используется Composition API для более гибкой и масштабируемой архитектуры компонентов.
+- **TypeScript**: Типизация данных для повышения стабильности кода и предотвращения ошибок.
+- **LocalStorage**: Используется для хранения данных о контактах, что позволяет сохранять их при обновлении страницы.
+- **Vitest**: Тестирование проекта, написание юнит-тестов для функций, связанных с добавлением и удалением контактов.
+- **@vue/test-utils**: Библиотека для тестирования Vue-компонентов, используется для имитации взаимодействия пользователя с компонентами и проверки их поведения.
 
-```sh
-npm run dev
-```
+## Примерные команды для тестирования
 
-### Type-Check, Compile and Minify for Production
+1. Запустите тесты:
+   ```bash
+   npm run test
+   ```
 
-```sh
-npm run build
-```
+2. Для просмотра отчётов о тестах используйте:
+   ```bash
+   npm run test:watch
+   ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+## Подходы
+- Реализовано разделение логики добавления и удаления контактов, что облегчает тестирование и поддержку.
+- Эмиты используются для передачи событий между компонентами (например, `delete` и `back`).
+- Состояние контактов синхронизируется с LocalStorage с помощью `watch`, чтобы сохранить данные пользователя даже после перезагрузки страницы.
