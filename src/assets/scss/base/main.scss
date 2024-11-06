@@ -1,0 +1,10 @@
+body {
+  color: $color-text-primary;
+  background-color: $color-white;
+
+  @include text-1;
+}
+
+.router-link-active {
+  pointer-events: none;
+}

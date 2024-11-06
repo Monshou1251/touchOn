@@ -1,0 +1,88 @@
+.contact-item {
+  padding: rem(10);
+  width: rem(400);
+  height: rem(600);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-primary;
+  border-radius: rem(10);
+  position: relative;
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: rem(30);
+    position: absolute;
+    left: rem(10);
+    height: rem(40);
+    width: rem(40);
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $color-white-12;
+      cursor: pointer;
+    }
+  }
+
+  &__account {
+    font-size: rem(150);
+  }
+
+  &__info {
+    width: 100%;
+    background-color: $color-white-12;
+    margin: rem(5);
+    padding: rem(10) rem(10) rem(12) rem(15);
+    border-radius: rem(10);
+  }
+
+  &__title {
+    color: $color-gray-40;
+  }
+
+  &__buttons {
+    width: 100%;
+    min-height: rem(60);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(40);
+    border-top: 1px solid $color-white-12;
+
+    &-delete {
+      font-size: 2rem;
+      color: $color-accent;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+
+    &-save {
+      font-size: 2rem;
+      color: #4285f4;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+input {
+  border: none;             
+  outline: none;            
+  background: transparent;  
+  font-size: inherit;       
+  font-family: inherit;     
+  color: inherit;           
+  caret-color: currentColor; 
+  padding: 0;               
+  width: 100%;              
+}

@@ -1,0 +1,22 @@
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+
+  &__input {
+    width: 100%;
+    padding: 8px 32px 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: rem(15);
+    font-size: rem(16);
+  }
+
+  &__icon {
+    position: absolute;
+    right: 12px;
+    font-size: 18px;
+    color: #888;
+  }
+}
