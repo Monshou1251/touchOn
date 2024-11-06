@@ -17,13 +17,7 @@
 
 <script lang="ts" setup>
 import { ref, defineEmits, onMounted, onBeforeUnmount } from 'vue';
-
-interface Contact {
-  id: string;
-  name: string;
-  surname: string;
-  email: string;
-}
+import type { Contact } from '@/types/Contact';
 
 const emit = defineEmits<{
   (event: 'addContact', contact: Contact): void;
@@ -31,9 +25,12 @@ const emit = defineEmits<{
 }>();
 
 const showModal = ref(true);
-const contact = ref<Contact>({ id: '', name: '', surname: '', email: '' });
+
+// Define contact without an `id` initially
+const contact = ref<Omit<Contact, 'id'>>({ name: '', surname: '', email: '' });
 
 function submitContact() {
+  // Assign an `id` when emitting the addContact event
   emit('addContact', { id: Date.now(), ...contact.value });
   closeModal();
 }
